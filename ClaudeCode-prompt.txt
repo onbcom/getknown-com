@@ -1,0 +1,17 @@
+Read CLAUDE-project.md to understand the full scope, then build the GetKnown.com Astro site.
+
+1.  **Framework Setup**: Initialize Astro (latest) with Tailwind CSS.
+2.  **CMS Integration**: Setup Keystatic with a local Git-based configuration. Use `.mdoc` files with YAML frontmatter in `src/content/`.
+3.  **Content Creation**:
+    *   Initialize a Git repo immediately (required for Keystatic).
+    *   Create the "Visibility Scorecard" tool (Logic in `TOOLS.md`).
+    *   Create the pSEO dynamic routes for "Industry Visibility Guides" (Config in `SPEC.md`).
+    *   Generate the 4 starter articles as markdown files in `src/content/articles/`.
+4.  **Image Generation**: Use Replicate MCP to generate images for the Hero, Blog Thumbnails, and Tool Backgrounds as specified in `CLAUDE-project.md`.
+    *   Hero: `public/images/hero-visibility.png` (seedream-3)
+    *   Logo: `public/images/logo-getknown.png` (ideogram-v3-quality)
+5.  **Design Execution**: Follow `DESIGN.md` strictly. Replicate professional, high-trust visual patterns.
+6.  **Final Polish**: Ensure all links work, the interactive tool provides value, and the pSEO pages are indexed-ready.
+7.  **Auto-Push**: Once done, run `git add -A && git commit -m "build: complete personal branding platform" && git push`.
+
+Refer to the provided `CONTENT.md` for all copy. Ensure 2026 is the year used throughout.

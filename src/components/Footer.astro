@@ -1,55 +1,79 @@
 ---
 ---
-<footer class="bg-[#0F172A] text-slate-400 mt-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-      <!-- Brand -->
-      <div class="md:col-span-1">
-        <a href="/" class="flex items-center gap-2 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-[#F97316] flex items-center justify-center">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M9 2L14 6V12L9 16L4 12V6L9 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-              <circle cx="9" cy="9" r="2" fill="white"/>
-            </svg>
+<footer class="bg-neutral-950 border-t border-neutral-900 pt-14 pb-10">
+  <div class="container mx-auto px-6 lg:px-12">
+    <div class="bg-neutral-900/50 border border-white/5 rounded-3xl px-6 py-10 lg:px-10 lg:py-12 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.5)]">
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16">
+        <!-- Brand -->
+        <div class="lg:w-1/3 space-y-5">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm">
+              <iconify-icon icon="solar:star-fall-linear" width="20" height="20" stroke-width="1.5"></iconify-icon>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold tracking-tight text-white font-geist">GetKnown.com</span>
+              <span class="text-[11px] uppercase tracking-[0.16em] text-neutral-500 font-geist">Visibility Platform</span>
+            </div>
           </div>
-          <span class="text-white font-bold text-xl tracking-tight">GetKnown</span>
-        </a>
-        <p class="text-sm leading-relaxed">The definitive authority-building platform for founders, consultants, and experts.</p>
+          <p class="text-sm text-neutral-400 max-w-sm font-geist">
+            Helping experts move from invisible to iconic. Build a category-defining personal brand and attract high-value opportunities.
+          </p>
+          <div class="flex items-center gap-3 text-neutral-500">
+            <a href="#" class="w-8 h-8 rounded-full border border-neutral-800 flex items-center justify-center hover:border-blue-500 hover:text-white transition-colors">
+              <iconify-icon icon="simple-icons:x" width="14" height="14"></iconify-icon>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full border border-neutral-800 flex items-center justify-center hover:border-blue-500 hover:text-white transition-colors">
+              <iconify-icon icon="simple-icons:linkedin" width="14" height="14"></iconify-icon>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full border border-neutral-800 flex items-center justify-center hover:border-blue-500 hover:text-white transition-colors">
+              <iconify-icon icon="simple-icons:instagram" width="14" height="14"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
+          <div class="space-y-3">
+            <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 font-geist">Platform</h3>
+            <ul class="space-y-2 text-neutral-400">
+              <li><a href="/audit" class="hover:text-white transition-colors font-geist">Authority Audit</a></li>
+              <li><a href="/platform" class="hover:text-white transition-colors font-geist">Content Systems</a></li>
+              <li><a href="/platform" class="hover:text-white transition-colors font-geist">Reputation Engine</a></li>
+              <li><a href="/pricing" class="hover:text-white transition-colors font-geist">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 font-geist">Resources</h3>
+            <ul class="space-y-2 text-neutral-400">
+              <li><a href="/resources" class="hover:text-white transition-colors font-geist">Authority Guides</a></li>
+              <li><a href="/resources" class="hover:text-white transition-colors font-geist">Expert Newsletter</a></li>
+              <li><a href="/resources" class="hover:text-white transition-colors font-geist">Playbooks</a></li>
+              <li><a href="/resources" class="hover:text-white transition-colors font-geist">Podcast</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 font-geist">Company</h3>
+            <ul class="space-y-2 text-neutral-400">
+              <li><a href="#" class="hover:text-white transition-colors font-geist">About Us</a></li>
+              <li><a href="#" class="hover:text-white transition-colors font-geist">Success Stories</a></li>
+              <li><a href="#" class="hover:text-white transition-colors font-geist">Partners</a></li>
+              <li><a href="#" class="hover:text-white transition-colors font-geist">Contact</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Product -->
-      <div>
-        <h4 class="text-white font-semibold mb-4 text-sm">Product</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/platform" class="hover:text-white transition-colors">Platform</a></li>
-          <li><a href="/audit" class="hover:text-white transition-colors">Visibility Audit</a></li>
-          <li><a href="/pricing" class="hover:text-white transition-colors">Pricing</a></li>
-        </ul>
+      <!-- Bottom row -->
+      <div class="mt-10 border-t border-neutral-800 pt-6 flex flex-col gap-4">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-neutral-500">
+          <p class="font-geist">Copyright 2026 GetKnown. Helping experts move from invisible to iconic.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#" class="hover:text-neutral-300 transition-colors font-geist">Privacy Policy</a>
+            <a href="#" class="hover:text-neutral-300 transition-colors font-geist">Terms of Service</a>
+            <a href="#" class="hover:text-neutral-300 transition-colors font-geist">Cookie Settings</a>
+          </div>
+        </div>
       </div>
-
-      <!-- Resources -->
-      <div>
-        <h4 class="text-white font-semibold mb-4 text-sm">Resources</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/resources" class="hover:text-white transition-colors">Articles</a></li>
-          <li><a href="/guides/how-to-get-known-in-tech" class="hover:text-white transition-colors">Guides</a></li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div>
-        <h4 class="text-white font-semibold mb-4 text-sm">Company</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="border-t border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs">Copyright &copy; 2026 GetKnown. All rights reserved.</p>
-      <p class="text-xs italic">Results vary based on individual effort and industry demand.</p>
     </div>
   </div>
 </footer>

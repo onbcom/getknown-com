@@ -7,11 +7,11 @@ const articles = (await getCollection('articles')).sort(
 );
 
 const industries = [
-  { slug: 'tech', name: 'Tech' },
-  { slug: 'finance', name: 'Finance' },
-  { slug: 'health', name: 'Health & Wellness' },
-  { slug: 'consulting', name: 'Consulting' },
-  { slug: 'real-estate', name: 'Real Estate' },
+  { slug: 'tech', name: 'Tech', icon: 'solar:chip-linear' },
+  { slug: 'finance', name: 'Finance', icon: 'solar:dollar-linear' },
+  { slug: 'health', name: 'Health & Wellness', icon: 'solar:health-linear' },
+  { slug: 'consulting', name: 'Consulting', icon: 'solar:case-minimalistic-linear' },
+  { slug: 'real-estate', name: 'Real Estate', icon: 'solar:home-linear' },
 ];
 ---
 
@@ -20,56 +20,59 @@ const industries = [
   description="Strategic articles on personal branding, authority building, LinkedIn, podcast guesting, SEO, and more. Build your expert visibility in 2026."
 >
   <!-- Hero -->
-  <section class="bg-[#0F172A] py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="text-[#F97316] text-sm font-semibold font-mono uppercase tracking-widest">Knowledge Base</span>
-      <h1 class="mt-4 text-4xl md:text-5xl font-bold text-white tracking-tight">Authority Resources</h1>
-      <p class="mt-4 text-lg text-slate-300 max-w-2xl">Tactical guides, frameworks, and playbooks for building your expert visibility in 2026.</p>
+  <section class="bg-neutral-950 pt-32 pb-16">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 mb-6">
+        <iconify-icon icon="solar:library-linear" width="16" height="16" class="text-blue-400"></iconify-icon>
+        <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-blue-300 font-geist">Knowledge Base</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-semibold text-white tracking-tight font-geist mb-4">Authority Resources</h1>
+      <p class="text-lg text-neutral-400 font-geist max-w-2xl">Tactical guides, frameworks, and playbooks for building your expert visibility in 2026.</p>
     </div>
   </section>
 
   <!-- Articles Grid -->
-  <section class="py-20 bg-[#F8FAFC]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+  <section class="py-20 bg-neutral-100/50">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {articles.map((article, i) => (
           <a
             href={`/resources/${article.slug}`}
-            class={`bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-[#F97316]/30 transition-all duration-200 group ${i === 0 ? 'md:col-span-2' : ''}`}
+            class={`bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:border-blue-200 transition-all duration-300 group shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] ${i === 0 ? 'md:col-span-2' : ''}`}
           >
             {i === 0 ? (
               <div class="p-10">
                 <div class="flex flex-wrap items-center gap-3 mb-4">
-                  <span class="bg-[#F97316] text-white text-xs font-bold px-3 py-1 rounded-full">Featured</span>
+                  <span class="bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-full font-geist">Featured</span>
                   {article.data.tags?.slice(0, 3).map(tag => (
-                    <span class="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full capitalize">{tag}</span>
+                    <span class="bg-neutral-100 text-neutral-600 text-xs px-3 py-1 rounded-full capitalize font-geist">{tag}</span>
                   ))}
                 </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 group-hover:text-[#F97316] transition-colors leading-tight">{article.data.title}</h2>
-                <p class="text-slate-600 leading-relaxed mb-6 max-w-3xl">{article.data.summary}</p>
+                <h2 class="text-2xl lg:text-3xl font-semibold text-neutral-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight tracking-tight font-geist">{article.data.title}</h2>
+                <p class="text-neutral-500 leading-relaxed mb-6 max-w-3xl font-geist">{article.data.summary}</p>
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-[#0F172A] flex items-center justify-center text-white text-xs font-bold">GK</div>
+                    <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-medium font-geist">GK</div>
                     <div>
-                      <p class="text-sm font-semibold text-slate-700">{article.data.author}</p>
-                      <p class="text-xs text-slate-400">{new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                      <p class="text-sm font-medium text-neutral-700 font-geist">{article.data.author}</p>
+                      <p class="text-xs text-neutral-400 font-geist">{new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                     </div>
                   </div>
-                  <span class="text-[#F97316] font-semibold text-sm group-hover:underline">Read article →</span>
+                  <span class="text-blue-600 font-medium text-sm font-geist inline-flex items-center gap-1">Read article <iconify-icon icon="solar:arrow-right-up-linear" width="14" height="14"></iconify-icon></span>
                 </div>
               </div>
             ) : (
               <div class="p-8">
                 <div class="flex flex-wrap gap-2 mb-3">
                   {article.data.tags?.slice(0, 2).map(tag => (
-                    <span class="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full capitalize">{tag}</span>
+                    <span class="bg-neutral-100 text-neutral-600 text-xs px-3 py-1 rounded-full capitalize font-geist">{tag}</span>
                   ))}
                 </div>
-                <h2 class="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-[#F97316] transition-colors leading-snug">{article.data.title}</h2>
-                <p class="text-slate-600 text-sm leading-relaxed mb-5 line-clamp-3">{article.data.summary}</p>
+                <h2 class="text-xl font-semibold text-neutral-900 mb-3 group-hover:text-blue-600 transition-colors leading-snug font-geist tracking-tight">{article.data.title}</h2>
+                <p class="text-neutral-500 text-sm leading-relaxed mb-5 line-clamp-3 font-geist">{article.data.summary}</p>
                 <div class="flex items-center justify-between">
-                  <p class="text-xs text-slate-400">{new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                  <span class="text-[#F97316] font-semibold text-sm group-hover:underline">Read →</span>
+                  <p class="text-xs text-neutral-400 font-geist">{new Date(article.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  <span class="text-blue-600 font-medium text-sm font-geist inline-flex items-center gap-1">Read <iconify-icon icon="solar:arrow-right-up-linear" width="14" height="14"></iconify-icon></span>
                 </div>
               </div>
             )}
@@ -78,20 +81,20 @@ const industries = [
       </div>
 
       <!-- Industry Guides -->
-      <div class="mb-4">
-        <h2 class="text-2xl font-bold text-[#0F172A] mb-2">Industry Visibility Guides</h2>
-        <p class="text-slate-600 mb-6">Niche-specific authority playbooks for your industry.</p>
+      <div class="mb-6">
+        <h2 class="text-2xl font-semibold text-neutral-900 mb-2 font-geist tracking-tight">Industry Visibility Guides</h2>
+        <p class="text-neutral-500 font-geist">Niche-specific authority playbooks for your industry.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {industries.map(ind => (
           <a
             href={`/guides/how-to-get-known-in-${ind.slug}`}
-            class="bg-white rounded-xl p-5 border border-slate-200 hover:border-[#F97316] hover:shadow-sm transition-all group text-center"
+            class="bg-white rounded-2xl p-5 border border-neutral-100 hover:border-blue-200 hover:bg-blue-50/50 hover:shadow-sm transition-all group text-center shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]"
           >
-            <div class="w-10 h-10 rounded-xl bg-[#F97316]/10 flex items-center justify-center text-[#F97316] mx-auto mb-3">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mx-auto mb-3 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <iconify-icon icon={ind.icon} width="20" height="20" stroke-width="1.5"></iconify-icon>
             </div>
-            <p class="font-semibold text-[#0F172A] text-sm group-hover:text-[#F97316] transition-colors">How to Get Known in {ind.name}</p>
+            <p class="font-medium text-neutral-900 text-sm group-hover:text-blue-600 transition-colors font-geist">Get Known in {ind.name}</p>
           </a>
         ))}
       </div>
@@ -99,21 +102,19 @@ const industries = [
   </section>
 
   <!-- Newsletter CTA -->
-  <section class="py-16 bg-[#0F172A]">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Get the Authority Weekly</h2>
-      <p class="text-slate-300 mb-8">Every Sunday — one actionable insight on authority building, personal branding, and expert visibility. No fluff.</p>
-      <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="return false">
-        <input
-          type="email"
-          placeholder="your@email.com"
-          class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#F97316] transition-colors"
-        />
-        <button type="submit" class="bg-[#F97316] text-white font-bold px-7 py-3.5 rounded-full hover:bg-orange-600 transition-colors whitespace-nowrap">
+  <section class="overflow-hidden bg-blue-900 bg-cover border-blue-950 border-t py-20 relative" style="background-image: url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f0b74796-d4c9-452f-a6cb-08cb3daa1ee3_3840w.webp);">
+    <div class="bg-blue-950/90 absolute top-0 right-0 bottom-0 left-0 backdrop-blur-sm"></div>
+    <div class="container mx-auto px-6 lg:px-12 relative z-10 text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-semibold text-white mb-4 font-geist tracking-tight">Get the Authority Weekly</h2>
+      <p class="text-blue-200 mb-8 font-geist">Every Sunday — one actionable insight on authority building, personal branding, and expert visibility. No fluff.</p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input type="email" placeholder="your@email.com"
+          class="flex-1 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-blue-300 focus:outline-none focus:border-white/50 transition-colors font-geist text-sm backdrop-blur-md" />
+        <button class="bg-blue-600 text-white font-medium px-7 py-3.5 rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap font-geist text-sm">
           Subscribe Free
         </button>
-      </form>
-      <p class="text-slate-500 text-xs mt-4">Join 12,000+ experts. Unsubscribe anytime.</p>
+      </div>
+      <p class="text-neutral-400 text-xs mt-4 font-geist">Join 50,000+ experts. Unsubscribe anytime.</p>
     </div>
   </section>
 </BaseLayout>

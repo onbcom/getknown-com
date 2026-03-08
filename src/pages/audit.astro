@@ -7,27 +7,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Use our free AI Visibility Scorecard to get your personal brand score and a personalized action plan. Takes just 2 minutes."
 >
   <!-- Hero -->
-  <section class="bg-[#F8FAFC] py-16 border-b border-slate-200">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="text-[#F97316] text-sm font-semibold font-mono uppercase tracking-widest">Free Tool</span>
-      <h1 class="mt-4 text-4xl md:text-5xl font-bold text-[#0F172A] tracking-tight">Visibility Scorecard</h1>
-      <p class="mt-4 text-lg text-slate-600 leading-relaxed">A 2-minute assessment that evaluates your current digital authority and provides a personalized Visibility Score (0–100) with your action plan.</p>
+  <section class="bg-neutral-950 pt-32 pb-16 border-b border-neutral-800">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 mb-6">
+          <iconify-icon icon="solar:scanner-linear" width="16" height="16" class="text-blue-400"></iconify-icon>
+          <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-blue-300 font-geist">Free Tool</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-semibold text-white tracking-tight font-geist mb-4">Visibility Scorecard</h1>
+        <p class="text-lg text-neutral-400 font-geist leading-relaxed max-w-xl mx-auto">A 2-minute assessment that evaluates your digital authority and provides a personalized Visibility Score (0–100) with your action plan.</p>
+      </div>
     </div>
   </section>
 
   <!-- Scorecard Tool -->
-  <section class="py-16 bg-white">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div id="scorecard" class="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
+  <section class="py-16 bg-neutral-100/50">
+    <div class="container mx-auto px-6 lg:px-12">
+      <div id="scorecard" class="bg-white rounded-2xl shadow-[0_2px_30px_-8px_rgba(0,0,0,0.12)] border border-neutral-100 overflow-hidden max-w-2xl mx-auto">
 
         <!-- Progress Bar -->
-        <div class="bg-[#F8FAFC] px-8 py-5 border-b border-slate-100">
+        <div class="bg-neutral-50 px-8 py-5 border-b border-neutral-100">
           <div class="flex justify-between items-center mb-2">
-            <span class="text-sm font-medium text-slate-600" id="progress-label">Step 1 of 4</span>
-            <span class="text-sm font-mono text-[#F97316] font-semibold" id="progress-pct">25%</span>
+            <span class="text-sm font-medium text-neutral-600 font-geist" id="progress-label">Step 1 of 4</span>
+            <span class="text-sm text-blue-600 font-semibold font-geist" id="progress-pct">25%</span>
           </div>
-          <div class="w-full bg-slate-200 rounded-full h-2">
-            <div id="progress-bar" class="bg-[#F97316] h-2 rounded-full transition-all duration-500" style="width: 25%"></div>
+          <div class="w-full bg-neutral-200 rounded-full h-1.5">
+            <div id="progress-bar" class="bg-blue-600 h-1.5 rounded-full transition-all duration-500" style="width: 25%"></div>
           </div>
         </div>
 
@@ -37,39 +42,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- STEP 1 -->
           <div id="step-1" class="step-panel">
             <div class="mb-2">
-              <span class="text-xs font-mono text-[#F97316] font-semibold uppercase tracking-wider">The Presence Check</span>
+              <span class="text-xs font-medium text-blue-600 uppercase tracking-wider font-geist">The Presence Check</span>
             </div>
-            <h2 class="text-2xl font-bold text-[#0F172A] mb-8">Where are you most active professionally?</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-8 font-geist">Where are you most active professionally?</h2>
 
             <div class="mb-8">
-              <p class="text-sm font-semibold text-slate-600 mb-3">Select all platforms you use regularly:</p>
+              <p class="text-sm font-medium text-neutral-600 mb-3 font-geist">Select all platforms you use regularly:</p>
               <div class="grid grid-cols-2 gap-3" id="platforms-grid">
                 {['LinkedIn', 'X (Twitter)', 'Personal Website', 'Medium/Substack', 'Podcasts', 'None'].map(p => (
-                  <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-[#F97316]/50 transition-colors has-[:checked]:border-[#F97316] has-[:checked]:bg-[#F97316]/5">
+                  <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-neutral-200 cursor-pointer hover:border-blue-300 transition-colors has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
                     <input type="checkbox" value={p} class="platform-check sr-only" />
-                    <span class="w-5 h-5 rounded border-2 border-slate-300 flex-shrink-0 flex items-center justify-center check-box transition-colors">
-                      <svg class="w-3 h-3 text-white hidden check-icon" viewBox="0 0 12 12" fill="currentColor"><path d="M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z"/></svg>
+                    <span class="w-5 h-5 rounded border-2 border-neutral-300 flex-shrink-0 flex items-center justify-center check-box transition-colors">
+                      <iconify-icon icon="solar:check-bold" width="10" height="10" class="text-white check-icon hidden"></iconify-icon>
                     </span>
-                    <span class="text-sm font-medium text-slate-700">{p}</span>
+                    <span class="text-sm font-medium text-neutral-700 font-geist">{p}</span>
                   </label>
                 ))}
               </div>
             </div>
 
             <div class="mb-8">
-              <p class="text-sm font-semibold text-slate-600 mb-3">When was your last professional post or article?</p>
-              <div class="grid grid-cols-2 gap-3" id="recency-grid">
+              <p class="text-sm font-medium text-neutral-600 mb-3 font-geist">When was your last professional post or article?</p>
+              <div class="grid grid-cols-2 gap-3">
                 {[{val:'today',label:'Today'},{val:'week',label:'This week'},{val:'month',label:'Last month'},{val:'old',label:'6+ months ago'}].map(opt => (
-                  <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-[#F97316]/50 transition-colors has-[:checked]:border-[#F97316] has-[:checked]:bg-[#F97316]/5">
+                  <label class="flex items-center gap-3 p-4 rounded-xl border-2 border-neutral-200 cursor-pointer hover:border-blue-300 transition-colors has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
                     <input type="radio" name="recency" value={opt.val} class="recency-radio sr-only" />
-                    <span class="w-5 h-5 rounded-full border-2 border-slate-300 flex-shrink-0 transition-colors radio-circle"></span>
-                    <span class="text-sm font-medium text-slate-700">{opt.label}</span>
+                    <span class="w-5 h-5 rounded-full border-2 border-neutral-300 flex-shrink-0 transition-colors radio-circle"></span>
+                    <span class="text-sm font-medium text-neutral-700 font-geist">{opt.label}</span>
                   </label>
                 ))}
               </div>
             </div>
 
-            <button onclick="nextStep(2)" class="w-full bg-[#F97316] text-white font-bold py-4 rounded-full hover:bg-orange-600 transition-colors text-lg">
+            <button onclick="nextStep(2)" class="w-full bg-blue-600 text-white font-medium py-4 rounded-lg hover:bg-blue-700 transition-colors font-geist">
               Continue →
             </button>
           </div>
@@ -77,30 +82,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- STEP 2 -->
           <div id="step-2" class="step-panel hidden">
             <div class="mb-2">
-              <span class="text-xs font-mono text-[#F97316] font-semibold uppercase tracking-wider">The Social Proof Test</span>
+              <span class="text-xs font-medium text-blue-600 uppercase tracking-wider font-geist">The Social Proof Test</span>
             </div>
-            <h2 class="text-2xl font-bold text-[#0F172A] mb-8">How established is your credibility?</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-8 font-geist">How established is your credibility?</h2>
 
             <div class="space-y-6 mb-8">
               <div>
-                <p class="text-sm font-semibold text-slate-700 mb-3">Have you been featured in third-party media in the last 12 months?</p>
+                <p class="text-sm font-medium text-neutral-700 mb-3 font-geist">Have you been featured in third-party media in the last 12 months?</p>
                 <div class="grid grid-cols-2 gap-3">
                   {[{val:'yes',label:'Yes, I have'},{val:'no',label:'Not yet'}].map(opt => (
-                    <label class="flex items-center justify-center gap-3 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-[#F97316]/50 transition-colors has-[:checked]:border-[#F97316] has-[:checked]:bg-[#F97316]/5">
+                    <label class="flex items-center justify-center gap-3 p-4 rounded-xl border-2 border-neutral-200 cursor-pointer hover:border-blue-300 transition-colors has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
                       <input type="radio" name="media" value={opt.val} class="sr-only" />
-                      <span class="text-sm font-semibold text-slate-700">{opt.label}</span>
+                      <span class="text-sm font-semibold text-neutral-700 font-geist">{opt.label}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               <div>
-                <p class="text-sm font-semibold text-slate-700 mb-3">Do you have a central "home" (personal website or link-in-bio) for your expertise?</p>
+                <p class="text-sm font-medium text-neutral-700 mb-3 font-geist">Do you have a central "home" (personal website or link-in-bio) for your expertise?</p>
                 <div class="grid grid-cols-2 gap-3">
                   {[{val:'yes',label:'Yes, I do'},{val:'no',label:'Not yet'}].map(opt => (
-                    <label class="flex items-center justify-center gap-3 p-4 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-[#F97316]/50 transition-colors has-[:checked]:border-[#F97316] has-[:checked]:bg-[#F97316]/5">
+                    <label class="flex items-center justify-center gap-3 p-4 rounded-xl border-2 border-neutral-200 cursor-pointer hover:border-blue-300 transition-colors has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
                       <input type="radio" name="website" value={opt.val} class="sr-only" />
-                      <span class="text-sm font-semibold text-slate-700">{opt.label}</span>
+                      <span class="text-sm font-semibold text-neutral-700 font-geist">{opt.label}</span>
                     </label>
                   ))}
                 </div>
@@ -108,10 +113,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
 
             <div class="flex gap-3">
-              <button onclick="prevStep(1)" class="flex-1 border-2 border-slate-200 text-slate-700 font-semibold py-4 rounded-full hover:border-slate-300 transition-colors">
+              <button onclick="prevStep(1)" class="flex-1 border-2 border-neutral-200 text-neutral-700 font-medium py-4 rounded-lg hover:border-neutral-300 transition-colors font-geist">
                 ← Back
               </button>
-              <button onclick="nextStep(3)" class="flex-[2] bg-[#F97316] text-white font-bold py-4 rounded-full hover:bg-orange-600 transition-colors">
+              <button onclick="nextStep(3)" class="flex-[2] bg-blue-600 text-white font-medium py-4 rounded-lg hover:bg-blue-700 transition-colors font-geist">
                 Continue →
               </button>
             </div>
@@ -120,9 +125,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- STEP 3 -->
           <div id="step-3" class="step-panel hidden">
             <div class="mb-2">
-              <span class="text-xs font-mono text-[#F97316] font-semibold uppercase tracking-wider">Goal Alignment</span>
+              <span class="text-xs font-medium text-blue-600 uppercase tracking-wider font-geist">Goal Alignment</span>
             </div>
-            <h2 class="text-2xl font-bold text-[#0F172A] mb-8">What is your primary goal?</h2>
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-8 font-geist">What is your primary goal?</h2>
 
             <div class="grid grid-cols-1 gap-3 mb-8">
               {[
@@ -131,22 +136,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 {val:'speaking', label:'Land Speaking Gigs', desc:'Build a keynote speaking career'},
                 {val:'legacy', label:'Build a Legacy', desc:'Establish long-term thought leadership'},
               ].map(opt => (
-                <label class="flex items-start gap-4 p-5 rounded-xl border-2 border-slate-200 cursor-pointer hover:border-[#F97316]/50 transition-colors has-[:checked]:border-[#F97316] has-[:checked]:bg-[#F97316]/5">
+                <label class="flex items-start gap-4 p-5 rounded-xl border-2 border-neutral-200 cursor-pointer hover:border-blue-300 transition-colors has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
                   <input type="radio" name="goal" value={opt.val} class="sr-only mt-0.5" />
-                  <span class="w-5 h-5 rounded-full border-2 border-slate-300 flex-shrink-0 mt-0.5 radio-circle-goal transition-colors"></span>
+                  <span class="w-5 h-5 rounded-full border-2 border-neutral-300 flex-shrink-0 mt-0.5 radio-circle-goal transition-colors"></span>
                   <div>
-                    <p class="text-sm font-bold text-slate-800">{opt.label}</p>
-                    <p class="text-xs text-slate-500 mt-0.5">{opt.desc}</p>
+                    <p class="text-sm font-semibold text-neutral-800 font-geist">{opt.label}</p>
+                    <p class="text-xs text-neutral-500 mt-0.5 font-geist">{opt.desc}</p>
                   </div>
                 </label>
               ))}
             </div>
 
             <div class="flex gap-3">
-              <button onclick="prevStep(2)" class="flex-1 border-2 border-slate-200 text-slate-700 font-semibold py-4 rounded-full hover:border-slate-300 transition-colors">
+              <button onclick="prevStep(2)" class="flex-1 border-2 border-neutral-200 text-neutral-700 font-medium py-4 rounded-lg hover:border-neutral-300 transition-colors font-geist">
                 ← Back
               </button>
-              <button onclick="nextStep(4)" class="flex-[2] bg-[#F97316] text-white font-bold py-4 rounded-full hover:bg-orange-600 transition-colors">
+              <button onclick="nextStep(4)" class="flex-[2] bg-blue-600 text-white font-medium py-4 rounded-lg hover:bg-blue-700 transition-colors font-geist">
                 Calculate My Score →
               </button>
             </div>
@@ -155,33 +160,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- STEP 4 — Email capture -->
           <div id="step-4" class="step-panel hidden">
             <div class="mb-2">
-              <span class="text-xs font-mono text-[#F97316] font-semibold uppercase tracking-wider">Almost There</span>
+              <span class="text-xs font-medium text-blue-600 uppercase tracking-wider font-geist">Almost There</span>
             </div>
-            <h2 class="text-2xl font-bold text-[#0F172A] mb-3">Where should we send your results?</h2>
-            <p class="text-slate-600 mb-8">Enter your email to reveal your Visibility Score and personalized action plan.</p>
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-3 font-geist">Where should we send your results?</h2>
+            <p class="text-neutral-500 mb-8 font-geist text-sm">Enter your email to reveal your Visibility Score and personalized action plan.</p>
 
             <div class="space-y-4 mb-6">
-              <input
-                type="text"
-                id="user-name"
-                placeholder="Your first name"
-                class="w-full px-5 py-4 rounded-xl border-2 border-slate-200 focus:border-[#F97316] focus:outline-none text-slate-800 placeholder-slate-400 transition-colors"
-              />
-              <input
-                type="email"
-                id="user-email"
-                placeholder="your@email.com"
-                class="w-full px-5 py-4 rounded-xl border-2 border-slate-200 focus:border-[#F97316] focus:outline-none text-slate-800 placeholder-slate-400 transition-colors"
-              />
+              <input type="text" id="user-name" placeholder="Your first name"
+                class="w-full px-5 py-4 rounded-xl border-2 border-neutral-200 focus:border-blue-600 focus:outline-none text-neutral-800 placeholder-neutral-400 transition-colors font-geist text-sm" />
+              <input type="email" id="user-email" placeholder="your@email.com"
+                class="w-full px-5 py-4 rounded-xl border-2 border-neutral-200 focus:border-blue-600 focus:outline-none text-neutral-800 placeholder-neutral-400 transition-colors font-geist text-sm" />
             </div>
 
-            <p class="text-xs text-slate-400 mb-6">By submitting, you agree to receive your Visibility Roadmap and the Authority Weekly newsletter. Unsubscribe anytime.</p>
+            <p class="text-xs text-neutral-400 mb-6 font-geist">By submitting, you agree to receive your Visibility Roadmap and the Authority Weekly newsletter. Unsubscribe anytime.</p>
 
             <div class="flex gap-3">
-              <button onclick="prevStep(3)" class="flex-1 border-2 border-slate-200 text-slate-700 font-semibold py-4 rounded-full hover:border-slate-300 transition-colors">
+              <button onclick="prevStep(3)" class="flex-1 border-2 border-neutral-200 text-neutral-700 font-medium py-4 rounded-lg hover:border-neutral-300 transition-colors font-geist">
                 ← Back
               </button>
-              <button onclick="submitScorecard()" class="flex-[2] bg-[#F97316] text-white font-bold py-4 rounded-full hover:bg-orange-600 transition-colors">
+              <button onclick="submitScorecard()" class="flex-[2] bg-blue-600 text-white font-medium py-4 rounded-lg hover:bg-blue-700 transition-colors font-geist">
                 Reveal My Score →
               </button>
             </div>
@@ -192,37 +189,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="text-center mb-8">
               <div class="relative inline-flex items-center justify-center w-36 h-36 mb-6">
                 <svg class="w-36 h-36 -rotate-90" viewBox="0 0 120 120">
-                  <circle cx="60" cy="60" r="52" fill="none" stroke="#E2E8F0" stroke-width="10"/>
-                  <circle id="score-ring" cx="60" cy="60" r="52" fill="none" stroke="#F97316" stroke-width="10"
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="#E5E7EB" stroke-width="10"/>
+                  <circle id="score-ring" cx="60" cy="60" r="52" fill="none" stroke="#2563EB" stroke-width="10"
                     stroke-dasharray="326.7" stroke-dashoffset="326.7" stroke-linecap="round"
                     class="transition-all duration-1000"/>
                 </svg>
                 <div class="absolute text-center">
-                  <p class="text-4xl font-bold text-[#0F172A] font-mono" id="score-number">0</p>
-                  <p class="text-xs text-slate-500 font-mono">/ 100</p>
+                  <p class="text-4xl font-semibold text-neutral-900 font-geist" id="score-number">0</p>
+                  <p class="text-xs text-neutral-400 font-geist">/ 100</p>
                 </div>
               </div>
 
-              <h2 class="text-2xl font-bold text-[#0F172A] mb-1" id="score-tier-title">Calculating...</h2>
-              <p class="text-slate-600 text-sm" id="score-tier-desc"></p>
+              <h2 class="text-2xl font-semibold text-neutral-900 mb-1 font-geist" id="score-tier-title">Calculating...</h2>
+              <p class="text-neutral-500 text-sm font-geist" id="score-tier-desc"></p>
             </div>
 
-            <div id="score-action-box" class="bg-[#F8FAFC] rounded-xl p-6 mb-8 border border-slate-200">
-              <h3 class="text-sm font-bold text-[#0F172A] mb-2 font-mono uppercase tracking-wide">Your Recommended Action</h3>
-              <p id="score-action-text" class="text-slate-700 leading-relaxed"></p>
+            <div id="score-action-box" class="bg-blue-50 rounded-xl p-6 mb-8 border border-blue-100">
+              <h3 class="text-sm font-semibold text-neutral-900 mb-2 font-geist uppercase tracking-wide">Your Recommended Action</h3>
+              <p id="score-action-text" class="text-neutral-700 leading-relaxed font-geist text-sm"></p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <a href="/audit#scorecard" class="flex items-center justify-center gap-2 bg-[#F97316] text-white font-bold py-4 rounded-full hover:bg-orange-600 transition-colors text-sm">
-                Download Visibility Roadmap
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M3 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <a href="/audit#scorecard" class="flex items-center justify-center gap-2 bg-blue-600 text-white font-medium py-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-geist">
+                Download Roadmap
+                <iconify-icon icon="solar:download-linear" width="16" height="16"></iconify-icon>
               </a>
-              <a href="/pricing" class="flex items-center justify-center gap-2 border-2 border-[#0F172A] text-[#0F172A] font-bold py-4 rounded-full hover:bg-[#0F172A] hover:text-white transition-colors text-sm">
+              <a href="/pricing" class="flex items-center justify-center gap-2 border-2 border-neutral-200 text-neutral-800 font-medium py-4 rounded-lg hover:border-neutral-300 transition-colors text-sm font-geist">
                 Book a Strategy Session
               </a>
             </div>
 
-            <button onclick="resetScorecard()" class="w-full mt-3 text-slate-400 text-xs hover:text-slate-600 transition-colors py-2">
+            <button onclick="resetScorecard()" class="w-full mt-3 text-neutral-400 text-xs hover:text-neutral-600 transition-colors py-2 font-geist">
               Start over
             </button>
           </div>
@@ -234,115 +231,82 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
-// State
 let currentStep = 1;
-const answers = {
-  platforms: [] as string[],
-  recency: '',
-  media: '',
-  website: '',
-  goal: '',
-};
+const answers = { platforms: [], recency: '', media: '', website: '', goal: '' };
 
-function updateProgress(step: number) {
+function updateProgress(step) {
   const total = 4;
   const pct = Math.round((step / total) * 100);
-  const label = step <= 4 ? `Step ${step} of ${total}` : 'Complete';
-  (document.getElementById('progress-label') as HTMLElement).textContent = label;
-  (document.getElementById('progress-pct') as HTMLElement).textContent = pct + '%';
-  (document.getElementById('progress-bar') as HTMLElement).style.width = pct + '%';
+  document.getElementById('progress-label').textContent = step <= 4 ? `Step ${step} of ${total}` : 'Complete';
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-bar').style.width = pct + '%';
 }
 
-function showStep(step: number) {
+function showStep(step) {
   document.querySelectorAll('.step-panel').forEach(el => el.classList.add('hidden'));
   const target = document.getElementById(step <= 4 ? `step-${step}` : 'step-results');
   if (target) target.classList.remove('hidden');
   updateProgress(step <= 4 ? step : 4);
 }
 
-(window as any).nextStep = function(step: number) {
-  // Collect data from current step
+window.nextStep = function(step) {
   if (currentStep === 1) {
-    answers.platforms = Array.from(document.querySelectorAll<HTMLInputElement>('.platform-check:checked')).map(el => el.value);
-    const rec = document.querySelector<HTMLInputElement>('input[name="recency"]:checked');
+    answers.platforms = Array.from(document.querySelectorAll('.platform-check:checked')).map(el => el.value);
+    const rec = document.querySelector('input[name="recency"]:checked');
     answers.recency = rec ? rec.value : '';
   } else if (currentStep === 2) {
-    const med = document.querySelector<HTMLInputElement>('input[name="media"]:checked');
-    const web = document.querySelector<HTMLInputElement>('input[name="website"]:checked');
+    const med = document.querySelector('input[name="media"]:checked');
+    const web = document.querySelector('input[name="website"]:checked');
     answers.media = med ? med.value : '';
     answers.website = web ? web.value : '';
   } else if (currentStep === 3) {
-    const g = document.querySelector<HTMLInputElement>('input[name="goal"]:checked');
+    const g = document.querySelector('input[name="goal"]:checked');
     answers.goal = g ? g.value : '';
   }
-
   currentStep = step;
   showStep(step);
 };
 
-(window as any).prevStep = function(step: number) {
-  currentStep = step;
-  showStep(step);
-};
+window.prevStep = function(step) { currentStep = step; showStep(step); };
 
-(window as any).submitScorecard = function() {
-  const email = (document.getElementById('user-email') as HTMLInputElement).value;
-  if (!email || !email.includes('@')) {
-    alert('Please enter a valid email address.');
-    return;
-  }
+window.submitScorecard = function() {
+  const email = document.getElementById('user-email').value;
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
 
-  // Calculate score
   let score = 0;
-
-  // Platforms (up to 30 pts)
   const pCount = answers.platforms.filter(p => p !== 'None').length;
   score += Math.min(pCount * 6, 30);
-
-  // Recency (up to 20 pts)
-  const recencyMap: Record<string, number> = { today: 20, week: 15, month: 8, old: 0 };
+  const recencyMap = { today: 20, week: 15, month: 8, old: 0 };
   score += recencyMap[answers.recency] ?? 0;
-
-  // Media (20 pts)
   if (answers.media === 'yes') score += 20;
-
-  // Website (15 pts)
   if (answers.website === 'yes') score += 15;
-
-  // Goal bonus (15 pts)
   score += 15;
-
   score = Math.min(score, 100);
 
-  // Determine tier
   let tierTitle = '', tierDesc = '', action = '';
   if (score <= 40) {
-    tierTitle = '🔍 The Invisible Expert';
+    tierTitle = 'The Invisible Expert';
     tierDesc = 'High expertise, minimal digital footprint. You\'re sitting on untapped authority.';
     action = 'Focus on "Visibility Foundations" — optimize your LinkedIn profile, build a simple personal website, and start publishing weekly insights. Your expertise deserves an audience.';
   } else if (score <= 75) {
-    tierTitle = '📈 The Rising Voice';
+    tierTitle = 'The Rising Voice';
     tierDesc = 'Active but inconsistent. You have momentum — now you need systems.';
     action = 'Focus on "Content Continuity" and the "Guesting Flywheel." Commit to a weekly publishing cadence and start pitching yourself as a podcast guest. Consistency is the differentiator.';
   } else {
-    tierTitle = '🏆 The Industry Icon';
+    tierTitle = 'The Industry Icon';
     tierDesc = 'Strong authority established. Time to scale and systemize.';
     action = 'Focus on "Systemized PR" and "Category Leadership." Engage a PR strategy, build your speaker profile, and explore high-level advisory roles. You\'re ready for the main stage.';
   }
 
-  // Show results
-  (document.getElementById('score-tier-title') as HTMLElement).textContent = tierTitle;
-  (document.getElementById('score-tier-desc') as HTMLElement).textContent = tierDesc;
-  (document.getElementById('score-action-text') as HTMLElement).textContent = action;
-
+  document.getElementById('score-tier-title').textContent = tierTitle;
+  document.getElementById('score-tier-desc').textContent = tierDesc;
+  document.getElementById('score-action-text').textContent = action;
   showStep(5);
 
-  // Animate score
-  const ring = document.getElementById('score-ring') as SVGCircleElement;
-  const numEl = document.getElementById('score-number') as HTMLElement;
+  const ring = document.getElementById('score-ring');
+  const numEl = document.getElementById('score-number');
   const circumference = 326.7;
   const offset = circumference - (score / 100) * circumference;
-
   setTimeout(() => {
     ring.style.strokeDashoffset = String(offset);
     let current = 0;
@@ -354,33 +318,25 @@ function showStep(step: number) {
   }, 300);
 };
 
-(window as any).resetScorecard = function() {
-  answers.platforms = [];
-  answers.recency = '';
-  answers.media = '';
-  answers.website = '';
-  answers.goal = '';
+window.resetScorecard = function() {
+  Object.assign(answers, { platforms: [], recency: '', media: '', website: '', goal: '' });
   currentStep = 1;
   showStep(1);
-
-  // Reset form elements
-  document.querySelectorAll<HTMLInputElement>('input[type="checkbox"], input[type="radio"]').forEach(el => { el.checked = false; });
-  (document.getElementById('user-email') as HTMLInputElement).value = '';
-  (document.getElementById('user-name') as HTMLInputElement).value = '';
+  document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => { el.checked = false; });
+  document.getElementById('user-email').value = '';
+  document.getElementById('user-name').value = '';
 };
 
-// Checkbox visual update
 document.addEventListener('change', (e) => {
-  const target = e.target as HTMLInputElement;
-  if (target.matches('.platform-check')) {
-    const label = target.closest('label');
+  if (e.target.matches('.platform-check')) {
+    const label = e.target.closest('label');
     const box = label?.querySelector('.check-box');
     const icon = label?.querySelector('.check-icon');
-    if (target.checked) {
-      box?.classList.add('bg-[#F97316]', 'border-[#F97316]');
+    if (e.target.checked) {
+      box?.classList.add('bg-blue-600', 'border-blue-600');
       icon?.classList.remove('hidden');
     } else {
-      box?.classList.remove('bg-[#F97316]', 'border-[#F97316]');
+      box?.classList.remove('bg-blue-600', 'border-blue-600');
       icon?.classList.add('hidden');
     }
   }
