@@ -1,17 +1,255 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="GetKnown — Get Known for What You Do"
+  description="You've spent years mastering your craft. Now let's make sure the world knows it. Build a category-defining personal brand, scale your visibility, and attract high-value opportunities on autopilot in 2026."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-[#0F172A] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F97316] rounded-full opacity-5 blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-[#F97316]/10 border border-[#F97316]/20 rounded-full px-4 py-1.5 mb-8">
+          <span class="w-2 h-2 rounded-full bg-[#F97316] animate-pulse"></span>
+          <span class="text-[#F97316] text-sm font-medium font-mono">The Authority Platform for 2026</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+          Get known for<br />
+          <span class="text-[#F97316]">what you do.</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
+          You've spent years mastering your craft. Now, let's make sure the world knows it. Build a category-defining personal brand, scale your visibility, and attract high-value opportunities on autopilot.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/audit" class="inline-flex items-center justify-center gap-2 bg-[#F97316] text-white font-bold px-8 py-4 rounded-full hover:bg-orange-600 transition-all duration-150 shadow-lg hover:shadow-xl text-lg">
+            Audit Your Authority
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4 9H14M14 9L10 5M14 9L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/platform" class="inline-flex items-center justify-center gap-2 border border-slate-600 text-slate-300 font-semibold px-8 py-4 rounded-full hover:border-slate-400 hover:text-white transition-all duration-150 text-lg">
+            How It Works
+          </a>
+        </div>
+
+        <div class="mt-12 flex items-center gap-4">
+          <div class="flex -space-x-2">
+            {['bg-orange-400', 'bg-blue-400', 'bg-green-400', 'bg-purple-400', 'bg-pink-400'].map((color, i) => (
+              <div class={`w-9 h-9 rounded-full ${color} border-2 border-[#0F172A] flex items-center justify-center text-white text-xs font-bold`}>
+                {['A','B','C','D','E'][i]}
+              </div>
+            ))}
+          </div>
+          <p class="text-slate-400 text-sm">
+            Joined by <span class="text-white font-semibold">12,000+</span> experts building their authority
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority Flywheel -->
+  <section class="py-24 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-[#F97316] text-sm font-semibold font-mono uppercase tracking-widest">The System</span>
+        <h2 class="mt-3 text-4xl md:text-5xl font-bold text-[#0F172A] tracking-tight">The Authority Flywheel</h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">A proven four-step system that transforms quiet professionals into recognized industry leaders.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center text-[#F97316]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <span class="text-4xl font-bold text-slate-100 font-mono">01</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#0F172A] mb-3">Audit Your Digital Footprint</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Use our AI Visibility Engine to see how you currently appear to peers, prospects, and Google.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center text-[#F97316]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="text-4xl font-bold text-slate-100 font-mono">02</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#0F172A] mb-3">Define Your Category</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Carve out a "Category of One" so you stop competing on price and start leading on perspective.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center text-[#F97316]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <span class="text-4xl font-bold text-slate-100 font-mono">03</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#0F172A] mb-3">Automate Visibility</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Deploy a multi-channel content strategy across LinkedIn, Podcasts, and Newsletter without spending 40 hours a week.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center text-[#F97316]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <span class="text-4xl font-bold text-slate-100 font-mono">04</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#0F172A] mb-3">Scale Authority</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Bridge into tier-1 PR, keynote speaking, and high-level networking using your established digital proof.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits Bento Grid -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-[#F97316] text-sm font-semibold font-mono uppercase tracking-widest">Why GetKnown</span>
+        <h2 class="mt-3 text-4xl md:text-5xl font-bold text-[#0F172A] tracking-tight">Visibility that compounds.</h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">The modern expert economy rewards those who are seen, not just those who are skilled.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 bg-[#0F172A] rounded-xl p-10 relative overflow-hidden">
+          <div class="absolute right-0 bottom-0 w-64 h-64 bg-[#F97316] rounded-full opacity-10 translate-x-1/3 translate-y-1/3"></div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-xl bg-[#F97316]/20 flex items-center justify-center text-[#F97316] mb-6">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Inbound Opportunity Flow</h3>
+            <p class="text-slate-300 leading-relaxed">Stop chasing leads; have opportunities, speaking invites, and partnerships come to you. When your authority is established, the right people find you — not the other way around.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#F97316] rounded-xl p-8 flex flex-col justify-between">
+          <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <p class="text-5xl font-bold text-white mb-2">3–5×</p>
+            <h3 class="text-xl font-bold text-white mb-2">Higher Fees</h3>
+            <p class="text-orange-100 text-sm leading-relaxed">Experts who are "known" command significantly higher rates than invisible practitioners.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#F8FAFC] rounded-xl p-8 border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-[#0F172A] flex items-center justify-center text-white mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0F172A] mb-3">AI-Enhanced Reputation</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Leverage 2026 AI tools to maintain a 24/7 presence across all major platforms without burning out.</p>
+        </div>
+
+        <div class="md:col-span-2 bg-[#F8FAFC] rounded-xl p-8 border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center text-[#F97316] mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0F172A] mb-3">Network Equity</h3>
+          <p class="text-slate-600 leading-relaxed">Your brand is your greatest asset. Build a moat around your career that transcends any single company or role. Network equity appreciates over time and compounds like no other investment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-[#F8FAFC]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-[#F97316] text-sm font-semibold font-mono uppercase tracking-widest">FAQ</span>
+        <h2 class="mt-3 text-4xl font-bold text-[#0F172A] tracking-tight">Common questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none text-[#0F172A] font-semibold hover:bg-slate-50 transition-colors">
+            Why do I need a personal brand if I already have a successful business?
+            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-slate-600 leading-relaxed">In 2026, people buy from people. Your personal brand is your permanent career insurance. If the business shifts, your authority remains, allowing you to pivot instantly.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none text-[#0F172A] font-semibold hover:bg-slate-50 transition-colors">
+            I'm an introvert. Is this platform for me?
+            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-slate-600 leading-relaxed">Absolutely. "Getting known" isn't about being the loudest person in the room; it's about being the most relevant. We focus on systems that project your ideas, not just your face.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none text-[#0F172A] font-semibold hover:bg-slate-50 transition-colors">
+            How long does it take to see results?
+            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-slate-600 leading-relaxed">Most users see a measurable lift in profile views and inbound inquiries within 30 days of implementing our "Visibility Foundations."</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none text-[#0F172A] font-semibold hover:bg-slate-50 transition-colors">
+            How does GetKnown use AI?
+            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-slate-600 leading-relaxed">We use AI to analyze industry trends, optimize your content for "Authority SEO," and identify the exact podcast and PR opportunities where your voice is missing.</div>
+        </details>
+
+        <details class="group bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none text-[#0F172A] font-semibold hover:bg-slate-50 transition-colors">
+            Can I use this for my whole team?
+            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-slate-600 leading-relaxed">Yes. We offer "Founder + Team" visibility packages to help your key executives become industry thought leaders simultaneously.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 bg-[#0F172A] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <svg width="100%" height="100%">
+        <defs>
+          <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="1.5" fill="white"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots)"/>
+      </svg>
+    </div>
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#F97316] rounded-full opacity-5 blur-3xl"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 tracking-tight">
+        Stop being the world's<br />best-kept secret.
+      </h2>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+        Join 12,000+ experts who have claimed their rightful place at the top of their industry.
+      </p>
+      <a href="/audit" class="inline-flex items-center gap-3 bg-[#F97316] text-white font-bold px-10 py-5 rounded-full hover:bg-orange-600 transition-all duration-150 shadow-lg hover:shadow-2xl text-xl">
+        Start Your Visibility Audit
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M5 10H15M15 10L11 6M15 10L11 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

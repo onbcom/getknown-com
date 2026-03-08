@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const plans = [
+  {
+    name: 'Foundations',
+    price: '$49',
+    period: '/month',
+    desc: 'For experts just starting their visibility journey. Build the core infrastructure of your personal brand.',
+    cta: 'Start Free Trial',
+    ctaHref: '/audit',
+    highlight: false,
+    features: [
+      'Visibility Scorecard & audit',
+      'LinkedIn profile optimization guide',
+      'Category of One positioning worksheet',
+      'Monthly content calendar template',
+      'Authority SEO keyword report',
+      'Email support',
+    ],
+  },
+  {
+    name: 'Authority',
+    price: '$149',
+    period: '/month',
+    desc: 'For rising experts ready to build consistent visibility and inbound opportunities at scale.',
+    cta: 'Start Free Trial',
+    ctaHref: '/audit',
+    highlight: true,
+    badge: 'Most Popular',
+    features: [
+      'Everything in Foundations',
+      'AI-powered content generation (LinkedIn, newsletter)',
+      'Podcast guesting pitch templates & outreach',
+      'Weekly Authority Weekly newsletter distribution',
+      'Content repurposing system',
+      'Bi-weekly group strategy calls',
+      'Personal brand website audit & feedback',
+      'Priority email + chat support',
+    ],
+  },
+  {
+    name: 'Icon',
+    price: '$499',
+    period: '/month',
+    desc: 'For established experts scaling toward tier-1 PR, keynote speaking, and category leadership.',
+    cta: 'Book a Call',
+    ctaHref: '/audit',
+    highlight: false,
+    features: [
+      'Everything in Authority',
+      'Dedicated visibility strategist (1:1 monthly session)',
+      'Tier-1 PR matching & media placement support',
+      'Speaker bureau introduction & bio crafting',
+      'Press kit creation & distribution',
+      'Podcast booking concierge (5 per month)',
+      'LinkedIn ghostwriting (8 posts/month)',
+      'Journalist & analyst relationship database access',
+    ],
+  },
+];
+
+const addons = [
+  { name: 'Founder + Team Package', price: 'from $799/mo', desc: 'Extend Authority or Icon plans to 3 executives simultaneously' },
+  { name: '1:1 Strategy Intensive', price: '$1,200 one-time', desc: 'Full-day working session to build your complete visibility roadmap' },
+  { name: 'LinkedIn Ghostwriting', price: '$299/mo', desc: 'Monthly package of 12 posts researched, written, and scheduled for you' },
+];
+---
+
+<BaseLayout
+  title="Pricing — GetKnown"
+  description="Transparent, results-driven pricing for expert visibility. Start free with the Visibility Scorecard, then choose the plan that matches your authority goals."
+>
+  <!-- Hero -->
+  <section class="bg-[#0F172A] py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-[#F97316] text-sm font-semibold font-mono uppercase tracking-widest">Simple Pricing</span>
+      <h1 class="mt-4 text-4xl md:text-5xl font-bold text-white tracking-tight">Invest in your authority.</h1>
+      <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto">Start with the free Visibility Audit. Upgrade when you're ready to scale.</p>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="py-20 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Toggle (annual/monthly - visual only) -->
+      <div class="flex justify-center mb-12">
+        <div class="bg-white border border-slate-200 rounded-full p-1 flex gap-1">
+          <button class="px-5 py-2 text-sm font-semibold rounded-full bg-[#0F172A] text-white">Monthly</button>
+          <button class="px-5 py-2 text-sm font-semibold rounded-full text-slate-500 hover:text-slate-700 transition-colors">Annual <span class="text-[#F97316]">(Save 20%)</span></button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {plans.map(plan => (
+          <div class={`rounded-2xl overflow-hidden flex flex-col ${plan.highlight ? 'ring-2 ring-[#F97316] shadow-xl scale-105' : 'border border-slate-200 shadow-sm bg-white'}`}>
+            {plan.highlight ? (
+              <div class="bg-[#F97316] px-8 py-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h2 class="text-xl font-bold text-white">{plan.name}</h2>
+                  {plan.badge && <span class="bg-white text-[#F97316] text-xs font-bold px-3 py-1 rounded-full">{plan.badge}</span>}
+                </div>
+                <div class="flex items-end gap-1">
+                  <span class="text-4xl font-bold text-white">{plan.price}</span>
+                  <span class="text-orange-200 pb-1">{plan.period}</span>
+                </div>
+                <p class="text-orange-100 text-sm mt-2">{plan.desc}</p>
+              </div>
+            ) : (
+              <div class="bg-[#0F172A] px-8 py-6">
+                <h2 class="text-xl font-bold text-white mb-2">{plan.name}</h2>
+                <div class="flex items-end gap-1">
+                  <span class="text-4xl font-bold text-white">{plan.price}</span>
+                  <span class="text-slate-400 pb-1">{plan.period}</span>
+                </div>
+                <p class="text-slate-300 text-sm mt-2">{plan.desc}</p>
+              </div>
+            )}
+
+            <div class={`p-8 flex-1 flex flex-col ${plan.highlight ? 'bg-white' : 'bg-white'}`}>
+              <ul class="space-y-3 mb-8 flex-1">
+                {plan.features.map(f => (
+                  <li class="flex items-start gap-3 text-sm text-slate-700">
+                    <svg class="w-4 h-4 text-[#F97316] mt-0.5 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={plan.ctaHref}
+                class={`w-full text-center font-bold py-4 rounded-full transition-colors ${plan.highlight ? 'bg-[#F97316] text-white hover:bg-orange-600' : 'border-2 border-[#0F172A] text-[#0F172A] hover:bg-[#0F172A] hover:text-white'}`}
+              >
+                {plan.cta}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-slate-500 text-sm mt-8">All plans include a 14-day free trial. No credit card required to start.</p>
+    </div>
+  </section>
+
+  <!-- Add-ons -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#0F172A] mb-3">Power-Ups & Add-Ons</h2>
+        <p class="text-slate-600">Extend your plan with targeted visibility services.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {addons.map(addon => (
+          <div class="bg-[#F8FAFC] rounded-xl p-8 border border-slate-200">
+            <p class="text-[#F97316] font-bold text-lg mb-1">{addon.price}</p>
+            <h3 class="font-bold text-[#0F172A] text-lg mb-3">{addon.name}</h3>
+            <p class="text-slate-600 text-sm">{addon.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee -->
+  <section class="py-16 bg-[#F8FAFC] border-y border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 rounded-full bg-[#F97316]/10 flex items-center justify-center text-[#F97316] mx-auto mb-6">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M16 2L6 7v9c0 5.55 4.08 10.74 10 12 5.92-1.26 10-6.45 10-12V7L16 2z"/>
+          <path d="M11 16l3.5 3.5 7-7"/>
+        </svg>
+      </div>
+      <h2 class="text-3xl font-bold text-[#0F172A] mb-4">30-Day Results Guarantee</h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">If you implement our Visibility Foundations system and don't see a measurable increase in profile views and inbound inquiries within 30 days, we'll refund your first month — no questions asked.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-[#0F172A] mb-8 text-center">Pricing FAQs</h2>
+      <div class="space-y-4">
+        {[
+          { q: 'Can I switch plans?', a: 'Yes. You can upgrade or downgrade at any time. Changes take effect on your next billing cycle.' },
+          { q: 'Is there a long-term contract?', a: 'No. All plans are month-to-month. Annual billing is available at a 20% discount.' },
+          { q: 'What\'s included in the free trial?', a: 'Full access to your chosen plan for 14 days. No credit card required. At the end, you can subscribe or walk away.' },
+          { q: 'Do you offer discounts for early-stage founders or students?', a: 'Yes. We offer a 50% founding member discount for early-stage founders. Contact us directly to apply.' },
+        ].map(faq => (
+          <details class="group bg-[#F8FAFC] rounded-xl border border-slate-200 overflow-hidden">
+            <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none text-[#0F172A] font-semibold hover:bg-slate-100 transition-colors">
+              {faq.q}
+              <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-slate-600 leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

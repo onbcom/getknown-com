@@ -1,0 +1,83 @@
+---
+const navLinks = [
+  { href: '/platform', label: 'Platform' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/pricing', label: 'Pricing' },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200/60 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-[#F97316] flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 2L14 6V12L9 16L4 12V6L9 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="9" cy="9" r="2" fill="white"/>
+          </svg>
+        </div>
+        <span class="text-[#0F172A] font-bold text-xl tracking-tight font-['Plus_Jakarta_Sans']">GetKnown</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`text-sm font-medium transition-colors duration-150 ${
+              currentPath.startsWith(link.href)
+                ? 'text-[#F97316]'
+                : 'text-slate-600 hover:text-[#0F172A]'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a
+          href="/audit"
+          class="hidden sm:inline-flex items-center gap-2 bg-[#F97316] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-orange-600 transition-colors duration-150 shadow-sm"
+        >
+          Audit Your Brand
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7H11M11 7L8 4M11 7L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+    <div class="px-4 py-4 space-y-3">
+      {navLinks.map(link => (
+        <a href={link.href} class="block text-sm font-medium text-slate-700 hover:text-[#F97316] py-1">
+          {link.label}
+        </a>
+      ))}
+      <a href="/audit" class="block mt-3 bg-[#F97316] text-white text-sm font-semibold px-5 py-3 rounded-full text-center hover:bg-orange-600 transition-colors">
+        Audit Your Brand
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
